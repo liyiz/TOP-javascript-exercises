@@ -2,7 +2,7 @@ const repeatString = function(givenString, timesToRepeat) {
 
     // Will check if input number is negative and make it positive
     if (timesToRepeat < 0) {
-        timesToRepeat *= -1;
+        return "ERROR";
     }
 
     let stringToPrint = '';
