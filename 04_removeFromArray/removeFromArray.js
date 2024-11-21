@@ -1,7 +1,7 @@
 const removeFromArray = function(inputArray, ...toRemove) {
     // create array from input arguments "toRemove"
     let args = Array.from(toRemove);
-
+    
     // temporary array to collect indexes of items to be removed from inputArray
     let indexesToRemove = [];
     // compare inputArray and args
@@ -16,15 +16,13 @@ const removeFromArray = function(inputArray, ...toRemove) {
 
     }
     
+    console.log(indexesToRemove);
 
     // remove the items
-    for (let i = 0; i < indexesToRemove.length; i++) {
-        inputArray.splice(indexesToRemove[i], 1);
-    }
-
+    const newArray = inputArray.filter((item) => !args.includes(item))
 
     // return the final desired array
-    return inputArray;
+    return newArray;
 };
 
 // Do not edit below this line
