@@ -1,11 +1,12 @@
 const palindromes = function (input) {
     // Create array from input string and set it to all lowercase
     // Filter array so that every character is alphabetical
-    const toTest = Array.from(input.toLowerCase()).filter((char) => /[0-9A-Za-z]/.test(char));
-    //compare array and reversed array
-    const result = toTest.every((element, index) => element === toTest.reverse()[index]);
-    //if arrays match -> palindrome true
-    return result;
+    const cleanedInput = Array.from(input.toLowerCase()).filter((char) => /[0-9A-Za-z]/.test(char));
+
+    // Create reversed array for comparison
+    const reversedInput = cleanedInput.slice().reverse();
+
+    return JSON.stringify(cleanedInput) === JSON.stringify(reversedInput);
 };
 
 // Do not edit below this line
