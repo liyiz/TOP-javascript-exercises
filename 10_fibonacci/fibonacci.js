@@ -1,6 +1,16 @@
 const fibonacci = function(num) {
+
+    // Check for string entry and convert to integer
+    if (num === NaN) {
+        num = parseInt(num);
+    }
+    // Check if num is negative
+    if (num < 0) {
+        return "OOPS";
+    }
+
     // num is max length
-    let fibonacci = [0, 1]; //add F0, F1 and F2 of fibonacci sequence - outliers
+    let fibonacci = [0, 1]; //add F0 and F1 of fibonacci sequence - outliers
     let i = 2; // start looping on F3 of fibonacci sequence
     
     while (i < num + 1) {
